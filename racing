@@ -1,0 +1,46 @@
+import pygame
+
+# Initialize Pygame
+pygame.init()
+
+# Constants
+WIDTH, HEIGHT = 500, 500
+
+# Colors
+WHITE = (255, 255, 255)
+
+# Create window
+win = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Car Racing Game")
+
+# Load images
+car = pygame.image.load('car.png')
+road = pygame.image.load('road.png')
+
+# Game loop
+run = True
+while run:
+    pygame.time.delay(100)
+    
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+            
+    keys = pygame.key.get_pressed()
+    
+    if keys[pygame.K_LEFT]:
+        pass  # move car left
+    if keys[pygame.K_RIGHT]:
+        pass  # move car right
+    
+    # Update game state
+    # ...
+    
+    # Rendering
+    win.fill(WHITE)
+    win.blit(road, (0, 0))
+    win.blit(car, (WIDTH//2, HEIGHT-50))
+    pygame.display.update()
+
+# Quit Pygame
+pygame.quit()
